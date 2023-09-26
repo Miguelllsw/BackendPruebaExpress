@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
         type: Number,
     },
     body: {
-        type: Number,
+        type: String,
     },
     homedest: {
         type: String,
