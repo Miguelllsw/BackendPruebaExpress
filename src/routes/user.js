@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const userSchema = require('../models/user');
+const puertasVentanasSchema = require('../models/user');
 
-router.post('/users', (req, res) => {
-    
-    const user = new userSchema(req.body);
-    user.save()
+router.get('/puertas-ventanas-y-molduras', (req, res) => {
+    puertasVentanasSchema.find()
         .then((result) => {
             res.send(result);
         })
@@ -14,8 +12,10 @@ router.post('/users', (req, res) => {
         });
 });
 
-router.get('/users', (req, res) => {
-    userSchema.find()
+router.post('/puertas-ventanas-y-molduras', (req, res) => {
+    const puertas = new puertasVentanasSchema(req.body);
+    puertas.save()
+
         .then((result) => {
             res.send(result);
         })

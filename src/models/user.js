@@ -1,49 +1,20 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const puertasVentanasSchema = new mongoose.Schema({
 
-    pclass: {
-        type: Number,
-    },
-    survived: {
-        type: Number,
+    itemId: {
+        type: String,
+        required: true,
     },
     name: {
         type: String,
+        required: true,
     },
-    sex: {
+    nameComplete: {
         type: String,
-    },
-    age: {
-        type: Number,
-    },
-    sibsp: {
-        type: Number,
-    },
-    parch: {
-        type: Number,
-    },
-    ticket: {
-        type: Number,
-    },
-    fare: {
-        type: Number,
-    },
-    cabin: {
-        type: String,
-    },
-    embarked: {
-        type: String,
-    },
-    boat: {
-        type: Number,
-    },
-    body: {
-        type: String,
-    },
-    homedest: {
-        type: String,
+        required: true,
     }
+
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Puertas-ventanas-y-molduras', puertasVentanasSchema);
